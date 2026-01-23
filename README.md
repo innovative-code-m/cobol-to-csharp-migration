@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# COBOL → C# Migration Kit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+COBOL資産をC#（.NET）へ移行する際に必要となる「変換ルール」「監査（テスト素材）」「正当性検証」の成果物を、GitHubで継続的に育てるためのリポジトリです。
 
-## Available Scripts
+本リポジトリは、**いきなり変換ツールを作らず**、まず **変換ルールと監査ループを固定**してから自動化に進む方針を採用します。  
+（REDEFINES / OCCURS DEPENDING ON / COPYBOOK などの難所で“事故らない”ことを最優先）
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 目的
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- COBOL→C#リプレース案件に向けて、営業・提案時に提示できる **実務直結の成果物**を整備する
+- 変換に伴うリスク（仕様誤解、データ不整合、移行漏れ）を **監査と検証の仕組み**で最小化する
+- ルール集を中心に、サンプルと検証手順を揃え、将来的な半自動変換へ段階的に拡張する
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 成果物（Deliverables）
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **変換ルール集（Rulebook）**  
+  COBOL構文・慣習をC#へ落とすためのルールを、番号付き（R-001…）で管理
 
-### `npm run build`
+- **監査用サンプル（Audit Samples）**  
+  ルールの網羅性を確認するための COBOL + Copybook + 入力データ例 + 期待結果例 を蓄積
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **検証（Verification）**  
+  ファイル→DBMS移行後の正当性チェック、差分比較、集計突合などの観点・手順・ツール方針
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **変換支援ツール（Tools）**（将来拡張）  
+  ルールに基づく変換補助、静的解析、チェック、テストハーネス等
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## リポジトリ構成（案）
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
