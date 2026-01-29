@@ -31,5 +31,57 @@ COBOL資産をC#（.NET）へ移行する際に必要となる「変換ルール
 
 ---
 
-## リポジトリ構成（案）
+## リポジトリ構成
+
+```
+cobol-to-csharp-migration/
+├── .gitignore
+├── package.json              # Node.js（React）依存関係
+├── package-lock.json
+├── README.md
+│
+├── .vscode/
+│   ├── README-ai-usage.md
+│   └── README-ai-usage.md.txt
+│
+├── docs/                     # 成果物・ドキュメント
+│   ├── audit/                # 監査用成果物
+│   │   ├── CoverageMatrix.md
+│   │   ├── MissingList.md
+│   │   └── ProposedRules.md
+│   ├── prompts/              # AI用プロンプト
+│   │   ├── audit/
+│   │   │   └── 11_SpecAudit.prompt.md
+│   │   └── dev/
+│   │       └── 01_Implement.prompt.md
+│   ├── rules/                # 変換ルール集
+│   │   └── CobolToCsharpRules.md
+│   ├── samples/              # 監査用サンプル（COBOL / C#）
+│   │   ├── cobol/
+│   │   └── csharp/
+│   └── verification/         # 検証用素材
+│       └── testdata/
+│
+├── public/                   # React 静的アセット
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│
+├── src/                      # React フロントエンド
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+│
+└── tools/                    # 変換・検証ツール（将来拡張）
+    ├── converter/
+    └── verifier/
+```
 
