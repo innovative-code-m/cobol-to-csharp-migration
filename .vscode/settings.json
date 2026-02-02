@@ -1,0 +1,32 @@
+{
+  // --- Editor ---
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  // 保存時に勝手に崩されるのを抑えたい場合は false 推奨
+  "editor.formatOnSave": false,
+
+  // 検索の安定（大量ファイルでも取り回し）
+  "search.useIgnoreFiles": true,
+
+  // --- Terminal (PowerShell 7 推奨) ---
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    }
+  },
+
+  // --- Git ---
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // --- AI（過度に自動化させない：事故防止）---
+  // Copilot の自動提案が邪魔なら false にしてOK
+  "github.copilot.inlineSuggest.enable": true,
+
+  // Copilot Chat のモデルは固定名に依存せず auto 推奨
+  "github.copilot.chat.model": "auto"
+}
