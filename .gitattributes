@@ -1,0 +1,68 @@
+# =========================================================
+# Line endings policy (safe for Windows dev + Git)
+# - Repository: normalize text files to LF
+# - Working tree: keep CRLF only for .bat/.cmd for compatibility
+# =========================================================
+
+# Default: treat as text and normalize to LF in the repository.
+* text=auto eol=lf
+
+# --- Windows batch scripts: keep CRLF in working tree for cmd.exe compatibility
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# --- PowerShell: LF is fine (pwsh/Windows PowerShell both read LF)
+*.ps1 text eol=lf
+*.psm1 text eol=lf
+*.psd1 text eol=lf
+
+# --- Visual Studio / .NET project files: keep LF (diff stability)
+*.sln text eol=lf
+*.csproj text eol=lf
+*.vbproj text eol=lf
+*.fsproj text eol=lf
+*.props text eol=lf
+*.targets text eol=lf
+*.config text eol=lf
+*.editorconfig text eol=lf
+*.cs text eol=lf
+*.vb text eol=lf
+*.fs text eol=lf
+*.resx text eol=lf
+
+# --- Common text formats
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.xml text eol=lf
+*.csv text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sql text eol=lf
+
+# --- Shell scripts (if used in WSL/CI)
+*.sh text eol=lf
+
+# --- Prevent line-ending conversion for binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.7z binary
+*.exe binary
+*.dll binary
+*.pdb binary
+*.snk binary
+*.pfx binary
+*.cer binary
