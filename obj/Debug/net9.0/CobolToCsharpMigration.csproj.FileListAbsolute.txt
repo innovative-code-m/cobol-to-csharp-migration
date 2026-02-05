@@ -1,0 +1,12 @@
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.AssemblyInfoInputs.cache
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.AssemblyInfo.cs
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.csproj.CoreCompileInputs.cache
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.sourcelink.json
+D:\dev\cobol-to-csharp-migration\bin\Debug\net9.0\CobolToCsharpMigration.deps.json
+D:\dev\cobol-to-csharp-migration\bin\Debug\net9.0\CobolToCsharpMigration.dll
+D:\dev\cobol-to-csharp-migration\bin\Debug\net9.0\CobolToCsharpMigration.pdb
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.dll
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\refint\CobolToCsharpMigration.dll
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\CobolToCsharpMigration.pdb
+D:\dev\cobol-to-csharp-migration\obj\Debug\net9.0\ref\CobolToCsharpMigration.dll

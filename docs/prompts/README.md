@@ -87,8 +87,8 @@ docs/prompts/
 3. 02_Refactor（必要時）
 4. 11_SpecAudit
 5. 12_CoverageMatrix
-6. 22_LargeRefactor（必要時）
-7. 21_Integrate
+6. 21_LargeRefactor（必要時）
+7. 22_Integrate
 
 ※ 正式定義は `ADR-0003_Workflow.md` を参照
 
