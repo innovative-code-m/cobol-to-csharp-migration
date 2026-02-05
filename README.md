@@ -1,87 +1,108 @@
 # COBOL → C# Migration Kit
 
-COBOL資産をC#（.NET）へ移行する際に必要となる「変換ルール」「監査（テスト素材）」「正当性検証」の成果物を、GitHubで継続的に育てるためのリポジトリです。
+COBOL資産を C#（.NET）へ移行する際に必要となる
+**「変換ルール」「監査（テスト素材）」「正当性検証」** を中心に、
+GitHub 上で **継続的に育てていくための実務向けリポジトリ** です。
 
-本リポジトリは、**いきなり変換ツールを作らず**、まず **変換ルールと監査ループを固定**してから自動化に進む方針を採用します。  
-（REDEFINES / OCCURS DEPENDING ON / COPYBOOK などの難所で“事故らない”ことを最優先）
+本リポジトリは、**いきなり変換ツールを作らない** ことを前提とし、
+まず **変換ルールと監査ループを固定** してから、自動化・半自動化へ進む方針を採用しています。
+
+特に以下のような COBOL 特有の難所で
+「変換事故を起こさないこと」を最優先とします。
+
+- REDEFINES
+- OCCURS / OCCURS DEPENDING ON
+- COPYBOOK
+- 集計・桁・符号・編集項目
 
 ---
 
 ## 目的
 
-- COBOL→C#リプレース案件に向けて、営業・提案時に提示できる **実務直結の成果物**を整備する
-- 変換に伴うリスク（仕様誤解、データ不整合、移行漏れ）を **監査と検証の仕組み**で最小化する
-- ルール集を中心に、サンプルと検証手順を揃え、将来的な半自動変換へ段階的に拡張する
+- COBOL → C# リプレース案件において
+  **営業・提案時に提示できる実務直結の成果物** を整備する
+- 変換に伴うリスク（仕様誤解・データ不整合・移行漏れ）を
+  **監査と検証の仕組み** によって最小化する
+- ルール集を中核に、サンプル・検証手順を蓄積し、
+  将来的な **半自動変換ツール** へ段階的に拡張する
 
 ---
 
 ## 成果物（Deliverables）
 
-- **変換ルール集（Rulebook）**  
-  COBOL構文・慣習をC#へ落とすためのルールを、番号付き（R-001…）で管理
+### 1. 変換ルール集（Rulebook）
+- COBOL 構文・慣習を C# へ変換するためのルールを番号付き（R-001…）で管理
+- 各ルールは以下を含む
+  - 適用範囲
+  - 変換方針
+  - 受入条件
+  - Before / After 例
+  - 注意点・未解決事項
 
-- **監査用サンプル（Audit Samples）**  
-  ルールの網羅性を確認するための COBOL + Copybook + 入力データ例 + 期待結果例 を蓄積
+### 2. 監査用サンプル（Audit Samples）
+- ルールの網羅性・妥当性を確認するためのテスト素材
+- COBOL + Copybook + 入力データ例 + 期待結果例 をセットで管理
 
-- **検証（Verification）**  
-  ファイル→DBMS移行後の正当性チェック、差分比較、集計突合などの観点・手順・ツール方針
+### 3. 検証（Verification）
+- ファイル → DBMS 移行後の正当性確認
+- 件数突合、集計比較、差分検出などの観点・手順・ツール方針
 
-- **変換支援ツール（Tools）**（将来拡張）  
-  ルールに基づく変換補助、静的解析、チェック、テストハーネス等
+### 4. 変換支援ツール（Tools）※将来拡張
+- ルールに基づく変換補助
+- 静的解析
+- チェック・テストハーネス
+
+---
+
+## バージョン管理方針（Tags）
+
+本リポジトリでは、**実装・検証の節目を Git タグで固定**します。
+
+- 例：
+  - `2026-02-03_01_Implement`
+    - OrderValidation 実装および関連ルール・監査成果物のスナップショット
+
+タグ単位で
+「この時点で何が確定していたか」
+「どこまで検証できていたか」
+を再現可能にすることを目的としています。
 
 ---
 
 ## リポジトリ構成
-
-```
 cobol-to-csharp-migration/
-├── .gitignore
-├── package.json              # Node.js（React）依存関係
-├── package-lock.json
 ├── README.md
 │
-├── .vscode/
-│   ├── README-ai-usage.md
-│   └── README-ai-usage.md.txt
+├── docs/ # 成果物・ドキュメント
+│ ├── rules/ # 変換ルール集
+│ │ └── CobolToCsharpRules.md
+│ ├── audit/ # 監査成果物
+│ │ ├── CoverageMatrix.md
+│ │ ├── MissingList.md
+│ │ └── ProposedRules.md
+│ ├── prompts/ # AI 実行用プロンプト
+│ │ ├── dev/
+│ │ └── audit/
+│ └── verification/ # 検証用素材
 │
-├── docs/                     # 成果物・ドキュメント
-│   ├── audit/                # 監査用成果物
-│   │   ├── CoverageMatrix.md
-│   │   ├── MissingList.md
-│   │   └── ProposedRules.md
-│   ├── prompts/              # AI用プロンプト
-│   │   ├── audit/
-│   │   │   └── 11_SpecAudit.prompt.md
-│   │   └── dev/
-│   │       └── 01_Implement.prompt.md
-│   ├── rules/                # 変換ルール集
-│   │   └── CobolToCsharpRules.md
-│   ├── samples/              # 監査用サンプル（COBOL / C#）
-│   │   ├── cobol/
-│   │   └── csharp/
-│   └── verification/         # 検証用素材
-│       └── testdata/
-│
-├── public/                   # React 静的アセット
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-│
-├── src/                      # React フロントエンド
-│   ├── App.css
-│   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
-│   ├── index.js
-│   ├── logo.svg
-│   ├── reportWebVitals.js
-│   └── setupTests.js
-│
-└── tools/                    # 変換・検証ツール（将来拡張）
-    ├── converter/
-    └── verifier/
-```
+├── tools/ # 変換・検証ツール（将来拡張）
+│ ├── converter/
+│ └── verifier/
 
+
+---
+
+## 想定利用シーン
+
+- COBOL → C# リプレース案件の事前調査・提案
+- 既存 COBOL 資産の構造把握・リスク洗い出し
+- AI を活用したルールベース移行フローの検証・構築
+- 移行プロジェクトの **技術ポートフォリオ**
+
+---
+
+## 方針メモ
+
+- 変換精度より **再現性・説明可能性** を優先
+- 「なぜその変換になるか」をルールとして残す
+- AI は **実装・監査・整理の役割分担** で使用する
