@@ -72,6 +72,25 @@ GitHub 上で **継続的に育てていくための実務向けリポジトリ*
 ## リポジトリ構成
 cobol-to-csharp-migration/
 ├── README.md
+├── .gitignore
+├── .gitattributes
+├── package.json
+├── package-lock.json
+├── CobolToCsharpMigration.sln
+├── CobolToCsharpMigration.csproj
+│
+├── .ai/ # AI開発支援用コンテキスト
+│ ├── context/
+│ │ └── glossary.md
+│ └── tasks/
+│     ├── backlog.md
+│     └── pr-checklist.md
+│
+├── .vscode/ # VS Code / Cursor 設定
+│ ├── extensions.json
+│ ├── settings.json
+│ ├── tasks.json
+│ └── README-ai-usage.md
 │
 ├── docs/ # 成果物・ドキュメント
 │ ├── rules/ # 変換ルール集
@@ -82,12 +101,63 @@ cobol-to-csharp-migration/
 │ │ └── ProposedRules.md
 │ ├── prompts/ # AI 実行用プロンプト
 │ │ ├── dev/
-│ │ └── audit/
+│ │ │   ├── 01_Implement.prompt.md
+│ │ │   ├── 02_Refactor.prompt.md
+│ │ │   └── 03_Test.prompt.md
+│ │ ├── audit/
+│ │ │   ├── 11_SpecAudit.prompt.md
+│ │ │   └── 12_CoverageMatrix.prompt.md
+│ │ ├── editor/
+│ │ │   └── 21_Integrate.prompt.md
+│ │ ├── exec/
+│ │ │   ├── README.md
+│ │ │   └── 2026-02-03_01_Implement.OrderValidation.md
+│ │ ├── refactor/
+│ │ │   └── 21_LargeRefactor.prompt.md
+│ │ └── README.md
+│ ├── decisions/ # アーキテクチャ決定記録（ADR）
+│ │   ├── ADR-0001_Tooling.md
+│ │   ├── ADR-0002_AI-Roles.md
+│ │   └── ADR-0003_Workflow.md
+│ ├── spec/ # プロジェクト仕様書
+│ │   ├── 00_ProjectCharter.md
+│ │   ├── 10_Architecture.md
+│ │   ├── 20_CodingRules.md
+│ │   └── 30_TestStrategy.md
+│ ├── samples/ # 監査用サンプル
+│ │   ├── cobol/
+│ │   └── csharp/
 │ └── verification/ # 検証用素材
+│     └── testdata/
 │
-├── tools/ # 変換・検証ツール（将来拡張）
-│ ├── converter/
-│ └── verifier/
+├── src/ # ソースコード
+│   ├── App.js
+│   ├── App.css
+│   ├── App.test.js
+│   ├── index.js
+│   ├── index.css
+│   ├── logo.svg
+│   ├── OrderService.cs
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+│
+├── public/ # 静的アセット
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│
+├── tests/ # テストコード
+│   ├── OrderServiceTests.cs
+│   └── CobolToCsharpMigration.Tests.csproj
+│
+└── tools/ # 変換・検証ツール（将来拡張）
+    ├── converter/
+    ├── verifier/
+    ├── lint.ps1
+    └── run-tests.ps1
 
 
 ---
