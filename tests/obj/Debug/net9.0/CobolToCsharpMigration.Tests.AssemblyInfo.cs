@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CobolToCsharpMigration.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ba3ede4ba2fff6bded5be1e803d28b77f1765af9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+42927dff80b253147deff3609c9fc92eb264aa92")]
 [assembly: System.Reflection.AssemblyProductAttribute("CobolToCsharpMigration.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CobolToCsharpMigration.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
