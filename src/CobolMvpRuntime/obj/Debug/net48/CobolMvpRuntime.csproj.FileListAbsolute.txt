@@ -1,0 +1,11 @@
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\bin\Debug\net48\CobolMvpRuntime.exe.config
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\bin\Debug\net48\CobolMvpRuntime.exe
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\bin\Debug\net48\CobolMvpRuntime.pdb
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.csproj.AssemblyReference.cache
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.GeneratedMSBuildEditorConfig.editorconfig
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.AssemblyInfoInputs.cache
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.AssemblyInfo.cs
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.csproj.CoreCompileInputs.cache
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.sourcelink.json
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.exe
+D:\dev\cobol-to-csharp-migration\src\CobolMvpRuntime\obj\Debug\net48\CobolMvpRuntime.pdb

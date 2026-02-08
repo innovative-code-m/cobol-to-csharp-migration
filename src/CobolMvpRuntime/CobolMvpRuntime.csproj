@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net48;net9.0</TargetFrameworks>
+    <RootNamespace>CobolMvpRuntime</RootNamespace>
+    <AssemblyName>CobolMvpRuntime</AssemblyName>
+  </PropertyGroup>
+
+</Project>
