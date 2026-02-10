@@ -88,6 +88,9 @@ cobol-to-csharp-migration/
 │       ├── backlog.md
 │       └── pr-checklist.md
 │
+├── .claude/                 # Claude AI設定
+│   └── settings.json
+│
 ├── .vscode/                 # VS Code / Cursor 設定
 │   ├── extensions.json
 │   ├── settings.json
@@ -113,7 +116,8 @@ cobol-to-csharp-migration/
 │   │   │   └── 21_Integrate.prompt.md
 │   │   ├── exec/
 │   │   │   ├── README.md
-│   │   │   └── 2026-02-03_01_Implement.OrderValidation.md
+│   │   │   ├── 2026-02-03_01_Implement.OrderValidation.md
+│   │   │   └── 2026-02-08_01_Implement_CobolMvpRuntime.md
 │   │   ├── refactor/
 │   │   │   └── 21_LargeRefactor.prompt.md
 │   │   └── README.md
@@ -121,18 +125,29 @@ cobol-to-csharp-migration/
 │   │   ├── ADR-0001_Tooling.md
 │   │   ├── ADR-0002_AI-Roles.md
 │   │   └── ADR-0003_Workflow.md
+│   ├── diagrams/           # ダイアグラム
+│   │   ├── CobolMvpRuntime_ClassDiagram.md
+│   │   └── TestProgram_Structure.md
 │   ├── spec/               # プロジェクト仕様書
 │   │   ├── 00_ProjectCharter.md
 │   │   ├── 10_Architecture.md
 │   │   ├── 20_CodingRules.md
 │   │   └── 30_TestStrategy.md
 │   ├── samples/            # 監査用サンプル
-│   │   ├── cobol/
-│   │   └── csharp/
+│   │   └── mvp01/
+│   │       ├── cobol/
+│   │       │   └── MVP01.cbl
+│   │       ├── ecpected/
+│   │       │   └── OUTFILE_expected.DAT
+│   │       └── input/
+│   │           └── INFILE.DAT
 │   └── verification/       # 検証用素材
 │       └── testdata/
 │
 ├── src/                    # ソースコード
+│   ├── CobolMvpRuntime/    # MVP01 COBOL→C#変換実装
+│   │   ├── CobolMvpRuntime.csproj
+│   │   └── Program.cs
 │   ├── App.js
 │   ├── App.css
 │   ├── App.test.js
@@ -151,7 +166,15 @@ cobol-to-csharp-migration/
 │   ├── manifest.json
 │   └── robots.txt
 │
+├── samples/                # サンプルデータ
+│   └── mvp01/
+│       ├── INFILE.DAT
+│       ├── OUTFILE.DAT
+│       ├── OUTFILE_actual.DAT
+│       └── OUTFILE_expected.DAT
+│
 ├── tests/                  # テストコード
+│   ├── CobolMvpRuntimeTests.cs
 │   ├── OrderServiceTests.cs
 │   └── CobolToCsharpMigration.Tests.csproj
 │
