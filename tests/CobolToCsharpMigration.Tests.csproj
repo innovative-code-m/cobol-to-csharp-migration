@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CobolToCsharpMigration.csproj" />
+    <ProjectReference Include="..\src\CobolMvpRuntime\CobolMvpRuntime.csproj" />
   </ItemGroup>
 
 </Project>
