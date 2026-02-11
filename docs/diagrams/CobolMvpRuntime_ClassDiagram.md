@@ -2,7 +2,7 @@
 
 ## 概要
 
-`src/CobolMvpRuntime/Program.cs` のクラス構造を表すクラス図です。
+`apps/backend/src/CobolMvpRuntime/Program.cs` のクラス構造を表すクラス図です。
 
 ## クラス図
 
@@ -108,7 +108,7 @@ flowchart TD
 
 ## 関連ファイル
 
-- ソースコード: `src/CobolMvpRuntime/Program.cs`
-- テストコード: `tests/CobolMvpRuntimeTests.cs`
+- ソースコード: `apps/backend/src/CobolMvpRuntime/Program.cs`
+- テストコード: `apps/backend/tests/CobolMvpRuntimeTests.cs`
 - COBOL元プログラム: `docs/samples/mvp01/cobol/MVP01.cbl`
 - 実装ログ: `docs/prompts/exec/2026-02-08_01_Implement_CobolMvpRuntime.md`

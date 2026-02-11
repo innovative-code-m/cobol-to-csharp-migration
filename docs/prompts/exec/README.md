@@ -66,8 +66,8 @@ YYYY-MM-DD_<BasePrompt>_<ShortDescription>.md
 # Exec: 01_Implement – OrderValidation
 
 ## 対象ファイル
-- src/OrderService.cs
-- tests/OrderServiceTests.cs
+- apps/backend/src/OrderService.cs
+- apps/backend/tests/OrderServiceTests.cs
 
 ## 変更目的
 注文金額が 0 以下の場合に false を返す仕様に変更する。

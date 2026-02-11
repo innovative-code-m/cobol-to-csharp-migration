@@ -295,7 +295,7 @@ graph LR
 ## 関連ファイル
 
 - COBOLテストプログラム: `docs/samples/mvp01/cobol/MVP01.cbl`
-- C#実装プログラム: `src/CobolMvpRuntime/Program.cs`
-- C#テストコード: `tests/CobolMvpRuntimeTests.cs`
+- C#実装プログラム: `apps/backend/src/CobolMvpRuntime/Program.cs`
+- C#テストコード: `apps/backend/tests/CobolMvpRuntimeTests.cs`
 - テストデータ: `samples/mvp01/INFILE.DAT`, `samples/mvp01/OUTFILE_expected.DAT`
 - クラス図: `docs/diagrams/CobolMvpRuntime_ClassDiagram.md`

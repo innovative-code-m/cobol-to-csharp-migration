@@ -76,10 +76,6 @@ cobol-to-csharp-migration/
 ├── README.md
 ├── .gitignore
 ├── .gitattributes
-├── package.json
-├── package-lock.json
-├── CobolToCsharpMigration.sln
-├── CobolToCsharpMigration.csproj
 │
 ├── .ai/                    # AI開発支援用コンテキスト
 │   ├── context/
@@ -96,6 +92,39 @@ cobol-to-csharp-migration/
 │   ├── settings.json
 │   ├── tasks.json
 │   └── README-ai-usage.md
+│
+├── apps/                    # アプリケーション
+│   ├── backend/             # C# バックエンド
+│   │   ├── CobolToCsharpMigration.sln
+│   │   ├── CobolToCsharpMigration.csproj
+│   │   ├── src/
+│   │   │   ├── CobolMvpRuntime/    # MVP01 COBOL→C#変換実装
+│   │   │   │   ├── CobolMvpRuntime.csproj
+│   │   │   │   └── Program.cs
+│   │   │   └── OrderService.cs
+│   │   └── tests/
+│   │       ├── CobolMvpRuntimeTests.cs
+│   │       ├── OrderServiceTests.cs
+│   │       └── CobolToCsharpMigration.Tests.csproj
+│   └── frontend/            # React フロントエンド
+│       ├── package.json
+│       ├── package-lock.json
+│       ├── src/
+│       │   ├── App.js
+│       │   ├── App.css
+│       │   ├── App.test.js
+│       │   ├── index.js
+│       │   ├── index.css
+│       │   ├── logo.svg
+│       │   ├── reportWebVitals.js
+│       │   └── setupTests.js
+│       └── public/
+│           ├── index.html
+│           ├── favicon.ico
+│           ├── logo192.png
+│           ├── logo512.png
+│           ├── manifest.json
+│           └── robots.txt
 │
 ├── docs/                   # 成果物・ドキュメント
 │   ├── rules/              # 変換ルール集
@@ -137,34 +166,12 @@ cobol-to-csharp-migration/
 │   │   └── mvp01/
 │   │       ├── cobol/
 │   │       │   └── MVP01.cbl
-│   │       ├── ecpected/
+│   │       ├── expected/
 │   │       │   └── OUTFILE_expected.DAT
 │   │       └── input/
 │   │           └── INFILE.DAT
 │   └── verification/       # 検証用素材
 │       └── testdata/
-│
-├── src/                    # ソースコード
-│   ├── CobolMvpRuntime/    # MVP01 COBOL→C#変換実装
-│   │   ├── CobolMvpRuntime.csproj
-│   │   └── Program.cs
-│   ├── App.js
-│   ├── App.css
-│   ├── App.test.js
-│   ├── index.js
-│   ├── index.css
-│   ├── logo.svg
-│   ├── OrderService.cs
-│   ├── reportWebVitals.js
-│   └── setupTests.js
-│
-├── public/                 # 静的アセット
-│   ├── index.html
-│   ├── favicon.ico
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
 │
 ├── samples/                # サンプルデータ
 │   └── mvp01/
@@ -172,11 +179,6 @@ cobol-to-csharp-migration/
 │       ├── OUTFILE.DAT
 │       ├── OUTFILE_actual.DAT
 │       └── OUTFILE_expected.DAT
-│
-├── tests/                  # テストコード
-│   ├── CobolMvpRuntimeTests.cs
-│   ├── OrderServiceTests.cs
-│   └── CobolToCsharpMigration.Tests.csproj
 │
 └── tools/                  # 変換・検証ツール（将来拡張）
     ├── converter/

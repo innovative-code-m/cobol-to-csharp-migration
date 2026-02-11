@@ -11,8 +11,8 @@
 ## 対象ファイル
 
 - 実装対象（新規作成を許可）：
-  - `src/CobolMvpRuntime/Program.cs`
-  - （必要なら）`src/CobolMvpRuntime/CobolMvpRuntime.csproj`（.NET Framework 4.8 Console）
+  - `apps/backend/src/CobolMvpRuntime/Program.cs`
+  - （必要なら）`apps/backend/src/CobolMvpRuntime/CobolMvpRuntime.csproj`（.NET Framework 4.8 Console）
   - （必要なら）`.sln` への追加（既存の運用に合わせて最小限）
 - テスト対象（既存がある場合のみ）：
   - `tests/` 配下にMVPの自動テストを追加（既存FWに合わせる）
@@ -99,8 +99,8 @@ COBOLのMVPサンプル（MOVE/IF/PERFORM/WRITE相当）を C#（.NET Framework 
 
 【対象ファイル】
 - 実装対象：
-  - `src/CobolMvpRuntime/Program.cs`
-  - （必要なら）`src/CobolMvpRuntime/CobolMvpRuntime.csproj`（.NET Framework 4.8 Console）
+  - `apps/backend/src/CobolMvpRuntime/Program.cs`
+  - （必要なら）`apps/backend/src/CobolMvpRuntime/CobolMvpRuntime.csproj`（.NET Framework 4.8 Console）
   - （必要なら）`.sln` への追加（既存の運用に合わせて最小限）
 - テスト対象（既存がある場合のみ）：
   - `tests/` 配下にMVPの自動テストを追加（既存FWに合わせる）
