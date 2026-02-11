@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <Compile Remove="tests/**" />
-    <Compile Remove="src/**" />
+    <Compile Remove="src/CobolMvpRuntime/**" />
+    <Compile Remove="**/obj/**" />
+    <Compile Remove="**/bin/**" />
   </ItemGroup>
 
 </Project>
