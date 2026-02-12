@@ -17,7 +17,7 @@ Usage:
 param(
   [string]$RepoRoot = (Resolve-Path ".").Path,
   [string]$OutDir   = "docs/audit",
-  [string]$Pattern  = "//TODO\((?<tag>[^)]+)\)\s*:\s*(?<msg>.*)$"
+  [string]$Pattern  = '^\s*//TODO\((?<tag>[^)]+)\)\s*:\s*(?<msg>.*)$'
 )
 
 Set-StrictMode -Version Latest
