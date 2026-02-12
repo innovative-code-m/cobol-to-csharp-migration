@@ -40,11 +40,12 @@ namespace CobolMvpRuntime
             }
 
             string id = input.Substring(0, 5);
+            string name = input.Substring(6, 20);
             string amount = input.Substring(27, 5);
 
-            //TODO(MVP02): UNSTRING IN-NAME DELIMITED BY SPACE INTO WS-FIRST WS-LAST
-            string wsFirst = string.Empty;
-            string wsLast = string.Empty;
+            string[] nameParts = name.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string wsFirst = nameParts.Length > 0 ? nameParts[0] : string.Empty;
+            string wsLast = nameParts.Length > 1 ? nameParts[1] : string.Empty;
 
             //TODO(MVP02): INSPECT WS-LAST CONVERTING lowercase TO uppercase
 
