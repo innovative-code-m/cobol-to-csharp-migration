@@ -1,0 +1,5 @@
+﻿"Tag","Message","File","Line","RawLine","Score","Priority"
+"MVP02","UNSTRING IN-NAME DELIMITED BY SPACE INTO WS-FIRST WS-LAST","apps\backend\src\CobolMvpRuntime\Mvp02Program.cs","45","//TODO(MVP02): UNSTRING IN-NAME DELIMITED BY SPACE INTO WS-FIRST WS-LAST","28","P2"
+"MVP02","INSPECT WS-LAST CONVERTING lowercase TO uppercase","apps\backend\src\CobolMvpRuntime\Mvp02Program.cs","49","//TODO(MVP02): INSPECT WS-LAST CONVERTING lowercase TO uppercase","28","P2"
+"MVP02","UNSTRING"", source);","apps\backend\tests\CobolMvpRuntimeMvp02Tests.cs","56","Assert.Contains(""//TODO(MVP02): UNSTRING"", source);","28","P2"
+"MVP02","INSPECT"", source);","apps\backend\tests\CobolMvpRuntimeMvp02Tests.cs","57","Assert.Contains(""//TODO(MVP02): INSPECT"", source);","28","P2"
