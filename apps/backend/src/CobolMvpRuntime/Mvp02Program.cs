@@ -47,7 +47,7 @@ namespace CobolMvpRuntime
             string wsFirst = nameParts.Length > 0 ? nameParts[0] : string.Empty;
             string wsLast = nameParts.Length > 1 ? nameParts[1] : string.Empty;
 
-            //TODO(MVP02): INSPECT WS-LAST CONVERTING lowercase TO uppercase
+            wsLast = wsLast.ToUpperInvariant();
 
             return id + "," + wsLast + "," + wsFirst + "," + amount;
         }

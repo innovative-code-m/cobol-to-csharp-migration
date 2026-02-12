@@ -9,10 +9,11 @@ namespace CobolToCsharpMigration.Tests;
 public class CobolMvpRuntimeMvp02Tests
 {
     [Theory]
-    [InlineData("00001,TARO YAMADA         ,00123", "00001,,,00123")]
-    [InlineData("00002,HANAKO SUZUKI       ,04500", "00002,,,04500")]
-    [InlineData("00003,ICHIRO TANAKA       ,00007", "00003,,,00007")]
-    public void TransformRecord_KnownInputs_ReturnsTodoExpected(string input, string expected)
+    [InlineData("00001,TARO YAMADA         ,00123", "00001,YAMADA,TARO,00123")]
+    [InlineData("00002,HANAKO SUZUKI       ,04500", "00002,SUZUKI,HANAKO,04500")]
+    [InlineData("00003,ICHIRO TANAKA       ,00007", "00003,TANAKA,ICHIRO,00007")]
+    [InlineData("00004,TARO yamada         ,00010", "00004,YAMADA,TARO,00010")]
+    public void TransformRecord_KnownInputs_ReturnsExpected(string input, string expected)
     {
         Assert.Equal(32, Encoding.ASCII.GetByteCount(input));
         string result = Mvp02Program.TransformRecord(input);
@@ -20,13 +21,13 @@ public class CobolMvpRuntimeMvp02Tests
     }
 
     [Fact]
-    public void ProcessFile_Mvp02Sample_MatchesExpectedTodoOutput()
+    public void ProcessFile_Mvp02Sample_MatchesExpectedOutput()
     {
         string backendRoot = GetBackendRoot();
         string repoRoot = Path.GetFullPath(Path.Combine(backendRoot, "..", ".."));
 
         string inPath = Path.Combine(repoRoot, "docs", "samples", "mvp02", "input", "INFILE.DAT");
-        string expectedPath = Path.Combine(repoRoot, "docs", "samples", "mvp02", "expected", "OUTFILE_expected_todo.DAT");
+        string expectedPath = Path.Combine(repoRoot, "docs", "samples", "mvp02", "expected", "OUTFILE_ideal.DAT");
         string outPath = Path.Combine(Path.GetTempPath(), "mvp02_test_out_" + Guid.NewGuid().ToString("N") + ".dat");
 
         try
@@ -47,14 +48,14 @@ public class CobolMvpRuntimeMvp02Tests
     }
 
     [Fact]
-    public void Source_ContainsRequiredTodoMarkers()
+    public void Source_DoesNotContainResolvedTodoMarkers()
     {
         string backendRoot = GetBackendRoot();
         string sourcePath = Path.Combine(backendRoot, "src", "CobolMvpRuntime", "Mvp02Program.cs");
         string source = File.ReadAllText(sourcePath, Encoding.UTF8);
 
-        Assert.Contains("//TODO(MVP02): UNSTRING", source);
-        Assert.Contains("//TODO(MVP02): INSPECT", source);
+        Assert.DoesNotContain("//TODO(MVP02): UNSTRING", source);
+        Assert.DoesNotContain("//TODO(MVP02): INSPECT", source);
     }
 
     private static string NormalizeNewLine(string value)
