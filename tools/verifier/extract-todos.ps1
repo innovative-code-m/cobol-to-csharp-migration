@@ -111,8 +111,14 @@ $md.Add("## Summary")
 $md.Add("")
 $md.Add("| Priority | Count |")
 $md.Add("|---:|---:|")
-foreach ($g in $grouped) {
-  $md.Add("| $($g.Name) | $($g.Count) |")
+if (@($grouped).Count -eq 0) {
+  $md.Add("| - | 0 |")
+  $md.Add("")
+  $md.Add("- No priority buckets (no TODO entries found).")
+} else {
+  foreach ($g in $grouped) {
+    $md.Add("| $($g.Name) | $($g.Count) |")
+  }
 }
 $md.Add("")
 
