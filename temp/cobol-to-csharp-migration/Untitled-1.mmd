@@ -1,0 +1,34 @@
+%%{init: {"flowchart": {"rankSpacing": 20, "nodeSpacing": 18}} }%%
+flowchart TB
+  %% =========================
+  %% AI分業ポスター（X貼り付け前提：文言短め・折返し抑制）
+  %% =========================
+
+  subgraph RULE["AI運用ルール（固定）"]
+   direction TB
+    R1["1タスク=1AI=1役割<br/>同一チャットで混在しない"]
+    R2["決定権：人間＋ChatGPT<br/>設計・仕様はAIに委ねない"]
+    R3["正本はGit管理<br/>会話ログは参考扱い"]
+  end
+
+  subgraph AI["使用AIと役割"]
+   direction TB
+    A["ChatGPT<br/>編集長 / 司令塔"]
+    B["Codex<br/>実 装担当"]
+    C["Gemini<br/>監査担当"]
+    D["Claude<br/>探索・改修担当"]
+  end
+
+  subgraph FILE["ファイル別AI割当"]
+    F1["docs/spec/*.md<br/>ChatGPT：仕様の正本"]
+    F2["docs/decisions/*.md<br/>ChatGPT：ADR（判断記録）"]
+    F3["src/**<br/>Codex：差分で実装"]
+    F4["tests/**<br/>Codex→Gemini：実装後に監査"]
+    F5["複数ファイル横断<br/>Claude：構造整理のみ"]
+  end
+
+  subgraph FLOW["標準フロー"]
+    W["標準フロー：<br/>ChatGPTで確定 → Codex実装 → ローカル検証<br/>Gemini監査 → Claude整理 → ChatGPTで更新"]
+  end
+
+  RULE --> AI --> FILE --> FLOW
