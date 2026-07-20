@@ -1,8 +1,8 @@
 # PROJECT STATUS
 cobol-to-csharp-migration
 
-Last Updated: 2026-02-13
-Phase: MVP02 – Runtime Stabilization
+Last Updated: 2026-03-13
+Phase: MVP14 – File I/O scope (sequential READ / WRITE integration)
 
 ---
 
@@ -18,8 +18,8 @@ It is a structured migration methodology prototype.
 
 ## 🔍 Current Focus
 
-- Stabilizing UNSTRING implementation
-- Implementing INSPECT support
+- Sequential file I/O (READ AT END / WRITE) and READ→WRITE integration
+- Migration-trace guarantee layer
 - Improving TODO-based missing construct detection
 - Expanding unit test coverage
 
@@ -44,12 +44,16 @@ Documentation:
 
 ## 📊 Coverage Snapshot
 
-| COBOL Statement | Status |
-|-----------------|--------|
-| MOVE            | Implemented |
-| DISPLAY         | Implemented |
-| UNSTRING        | Partial |
-| INSPECT         | Implemented |
+Implemented through MVP14 (see `docs/audit/CoverageMatrix.md` for the authoritative matrix):
+
+| Area | Status |
+|------|--------|
+| MOVE / DISPLAY | Implemented |
+| INSPECT / UNSTRING | Implemented |
+| EVALUATE (THRU / OTHER / ALSO) | Implemented |
+| PERFORM (UNTIL / VARYING) | Implemented |
+| Sequential file READ (AT END) / WRITE | Implemented |
+| Migration-trace guarantee layer | Foundation |
 
 ---
 

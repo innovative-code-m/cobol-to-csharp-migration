@@ -198,9 +198,9 @@ cobol-to-csharp-migration/
 
 ## Current Status
 
-**Phase**: MVP02 - Runtime Stabilization  
-**Focus**: UNSTRING and INSPECT implementation with comprehensive testing  
-**Next**: Rule system formalization and coverage expansion
+**Phase**: MVP14 — File I/O scope (sequential READ / WRITE integration)  
+**Implemented (through MVP14)**: MOVE, DISPLAY, INSPECT, UNSTRING, EVALUATE (THRU / OTHER / ALSO), PERFORM (UNTIL / VARYING), sequential file READ (AT END) / WRITE, and a migration-trace guarantee layer — each landed with transformation rules, samples, and unit tests, tagged per milestone.  
+**Next**: Rule system formalization and coverage expansion.
 
 For detailed status information, see:
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) - English overview

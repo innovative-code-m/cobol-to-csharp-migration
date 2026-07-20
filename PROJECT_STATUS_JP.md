@@ -1,8 +1,8 @@
 # PROJECT STATUS（詳細版）
 cobol-to-csharp-migration
 
-最終更新日: 2026-02-13
-フェーズ: MVP02 安定化フェーズ
+最終更新日: 2026-03-13
+フェーズ: MVP14 ファイルI/Oスコープ（順ファイル READ / WRITE 統合）
 
 ---
 
